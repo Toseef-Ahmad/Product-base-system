@@ -1,4 +1,6 @@
 import React from 'react'
+import IconButton from '@mui/material/IconButton';
+import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 
 export const IndividualProduct = ({individualProduct, addToCart}) => {
     const [audioPlaying, setAudiPlaying] = React.useState(false);
@@ -10,8 +12,13 @@ export const IndividualProduct = ({individualProduct, addToCart}) => {
     
     return (
         <div className='product'>
+        {
+          audioPlaying && <audio src={individualProduct.audioUrl} autoPlay></audio>
+        }
             <div className="audio-button">
-                <button>play</button>
+                <IconButton>
+                  <VolumeUpIcon onClick={() => setAudiPlaying(!audioPlaying)}/>
+                </IconButton>
             </div>
             <div className='product-img'>
                 <img src={individualProduct.url} alt="product-img"/>

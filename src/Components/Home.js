@@ -70,7 +70,7 @@ export const Home = (props) => {
             setLastDoc(lastDoc);
             setProducts(products);
             } else {
-                setDisablePages({...disablePages, next: true});
+                setDisablePages({next: true, prev: false});
             }
         })
     }
@@ -84,6 +84,11 @@ export const Home = (props) => {
             const lastDoc = collections.docs[collections.docs.length - 1];
             setLastDoc(lastDoc);
             setProducts(products);
+            } else {
+              setDisablePages({
+                next: false,
+                prev: true
+              })
             }
         })
     }
@@ -142,7 +147,7 @@ export const Home = (props) => {
             {products.length < 1 && (
                 <div className='container-fluid'>Please wait....</div>
             )}
-            <Pagination nextPage={nextPage} prevPage={prevPage}/>
+            <Pagination disablePages={disablePages} nextPage={nextPage} prevPage={prevPage}/>
         </>
     )
 }

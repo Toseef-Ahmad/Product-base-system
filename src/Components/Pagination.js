@@ -1,15 +1,17 @@
 import React from 'react';
 import './Pagination.css';
-const Pagination = ({nextPage, prevPage}) => {
+import Button from '@mui/material/Button';
+
+const Pagination = ({nextPage, prevPage, disablePages}) => {
     return (
         <>
             <footer className="footer">
                <div className="nextPage">
-                   <button onClick={nextPage}>NextPage</button>
+                   <Button disabled={disablePages.next}variant="contained" color="error" onClick={nextPage}>NextPage</Button>
                </div>
                <div className="grow" />
                <div className="prevPage">
-                   <button onClick={prevPage}>PrevPage</button>
+                   <Button disabled={disablePages.prev}variant="contained" color="error" onClick={prevPage}>PrevPage</Button>
                </div>
             </footer>
         </>

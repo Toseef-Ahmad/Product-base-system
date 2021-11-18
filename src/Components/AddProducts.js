@@ -77,7 +77,6 @@ export const AddProducts = () => {
                     // docRef = docRef;
                     storage.ref('product-images').child(audio.name).getDownloadURL().then(url => {
                         fs.collection('Products').doc(docRef.id).update({
-                            title: 'updated',
                             audioUrl: url,
                         }).then(() => {
                             console.log('Title updated', audioFileUrl);
