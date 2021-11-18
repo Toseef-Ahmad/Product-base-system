@@ -1,11 +1,25 @@
-import React from "react";
-import "./style.css";
+import React from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { Home } from './Components/Home'
+import { Login } from './Components/Login'
+import { Signup } from './Components/Signup'
+import { NotFound } from './Components/NotFound'
+import { AddProducts } from './Components/AddProducts'
+import { Cart } from './Components/Cart'
 
-export default function App() {
+export const App = () => {
   return (
-    <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
-    </div>
-  );
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component = {Home}/>
+        <Route path="/signup" component={Signup}/>
+        <Route path="/login" component={Login}/>
+        <Route path="/add-products" component={AddProducts}/>
+        <Route path="/cart" component={Cart}/>       
+        <Route component={NotFound}/>        
+      </Switch>
+    </BrowserRouter>
+  )
 }
+
+export default App
