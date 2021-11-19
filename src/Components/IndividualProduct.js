@@ -16,8 +16,8 @@ export const IndividualProduct = ({individualProduct, addToCart}) => {
           audioPlaying && <audio src={individualProduct.audioUrl} autoPlay></audio>
         }
             <div className="audio-button">
-                <IconButton>
-                  <VolumeUpIcon onClick={() => setAudiPlaying(!audioPlaying)}/>
+                <IconButton styles={{padding: '10px'}}>
+                  <VolumeUpIcon color={audioPlaying ? "default" : 'primary'} onClick={() => setAudiPlaying(!audioPlaying)} />
                 </IconButton>
             </div>
             <div className='product-img'>

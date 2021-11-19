@@ -5,6 +5,7 @@ import {Icon} from 'react-icons-kit'
 import {shoppingCart} from 'react-icons-kit/feather/shoppingCart'
 import {auth} from '../Config/Config'
 import {useHistory} from 'react-router-dom'
+import SearchBar from './SearchBar';
 
 export const Navbar = ({user,totalProducts}) => {
 
@@ -18,13 +19,14 @@ export const Navbar = ({user,totalProducts}) => {
 
     return (
         <div className='navbar'>
+          
             <div className='leftside'>
                 <div className='logo'>
                     <img src={logo} alt="logo"/>
                 </div>
             </div>
             <div className='rightside'>
-
+              
                 {!user&&<>
                     <div><Link className='navlink' to="signup">SIGN UP</Link></div>
                     <div><Link className='navlink' to="login">LOGIN</Link></div>
