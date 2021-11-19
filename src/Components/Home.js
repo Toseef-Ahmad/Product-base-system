@@ -131,7 +131,9 @@ export const Home = (props) => {
         }
         
     }
+    
     console.log(products);
+
     return (
         <>
             <Navbar user={user} totalProducts={totalProducts}/>           
